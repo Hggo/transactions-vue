@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
-    </div>
+    <Nav></Nav>
     <router-view/>
   </div>
 </template>
@@ -15,16 +14,19 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+body {
+  margin: 0px;
 }
 </style>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import Nav from '@/components/Nav.vue'
+
+@Component({
+  components: {
+    Nav
+  }
+})
+export default class App extends Vue {}
+</script>
