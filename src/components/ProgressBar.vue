@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import { Component, Vue } from 'vue-property-decorator'
+import vue from 'vue'
 
-@Component({
+export default vue.extend({
   components: {},
   props: ['status'],
   data () {
@@ -28,7 +28,6 @@ import { Component, Vue } from 'vue-property-decorator'
     }
   }
 })
-export default class ProgressBar extends Vue {}
 </script>
 
 <style lang="less">

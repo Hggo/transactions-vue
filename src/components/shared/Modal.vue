@@ -1,5 +1,5 @@
 <template>
-  <div name="modal" v-if="showModal">
+  <div name="modal" v-if="show">
     <div class="modal-backdrop-container">
       <div class="modal-backdrop">
         <div class="modal-container">
@@ -8,8 +8,8 @@
               <slot name="header"></slot>
             </span>
 
-            <span class="close-button" @click="showModal = false">
-              <img src="../assets/x-mark.svg" alt="Fechar" height="20px" />
+            <span class="close-button" @click="show = false">
+              <img src="@/assets/x-mark.svg" alt="Fechar" height="20px" />
             </span>
           </div>
 
@@ -27,18 +27,12 @@
 </template>
 
 <script>
-import { Component, Vue } from 'vue-property-decorator'
+import vue from 'vue'
 
-@Component({
+export default vue.extend({
   components: {},
-  props: ['showModal'],
-  data () {
-    return {
-      showModal: false
-    }
-  }
+  props: ['show']
 })
-export default class Modal extends Vue {}
 </script>
 
 <style lang="less">

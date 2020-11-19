@@ -21,13 +21,12 @@ body {
 </style>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import vue from 'vue'
 import Nav from '@/components/Nav.vue'
 
-@Component({
+export default vue.extend({
   components: {
     Nav
   }
 })
-export default class App extends Vue {}
 </script>

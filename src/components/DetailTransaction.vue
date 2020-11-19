@@ -10,13 +10,12 @@
 </template>
 
 <script>
-import { Component, Vue } from 'vue-property-decorator'
+import vue from 'vue'
 
-@Component({
+export default vue.extend({
   components: {},
   props: ['title', 'source', 'ammout']
 })
-export default class DetailTransaction extends Vue {}
 </script>
 
 <style lang="less">

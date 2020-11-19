@@ -5,13 +5,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import vue from 'vue'
 import TransactionTable from '@/components/TransactionTable.vue'
 
-@Component({
+export default vue.extend({
   components: {
     TransactionTable
   }
 })
-export default class Home extends Vue {}
 </script>
