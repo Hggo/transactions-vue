@@ -8,7 +8,7 @@
               <slot name="header"></slot>
             </span>
 
-            <span class="close-button" @click="show = false">
+            <span class="close-button" @click="hide">
               <img src="@/assets/x-mark.svg" alt="Fechar" height="20px" />
             </span>
           </div>
@@ -31,7 +31,12 @@ import vue from 'vue'
 
 export default vue.extend({
   components: {},
-  props: ['show']
+  props: ['show'],
+  methods: {
+    hide () {
+      this.$emit('close')
+    }
+  }
 })
 </script>
 
