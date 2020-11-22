@@ -1,12 +1,12 @@
 <template>
   <div class="home">
-    <TransactionTable/>
+    <TransactionTable />
   </div>
 </template>
 
 <script lang="ts">
 import vue from 'vue'
-import TransactionTable from '@/components/TransactionTable.vue'
+import TransactionTable from '@/components/transaction/TransactionTable.vue'
 import { listTransactions } from '@/services/transaction.service'
 
 export default vue.extend({
@@ -20,3 +20,10 @@ export default vue.extend({
   }
 })
 </script>
+
+<style lang="less">
+.home {
+  margin: 0 5vw;
+  width: auto;
+}
+</style>
