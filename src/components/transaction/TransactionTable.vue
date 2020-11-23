@@ -7,7 +7,7 @@
         <th>Status</th>
         <th>Valor</th>
       </tr>
-      <tr v-for="transaction in transactions" v-bind:key="transaction.id" @click="openDetail(transaction)">
+      <tr v-for="transaction in transactions" v-bind:key="transaction.id" @click="openDetail(transaction)" class="transaction-row">
         <td>{{ transaction.title }}</td>
         <td>{{ transaction.description }}</td>
         <td>{{ transaction.status | status}}</td>
