@@ -49,7 +49,7 @@ export default vue.extend({
   },
   computed: {
     transactions (): Transaction[] {
-      return this.$store.state.transactions
+      return this.$store.getters.currentTransactions
     }
   }
 })

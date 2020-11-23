@@ -1,3 +1,4 @@
+import Transaction from '@/typings/transaction'
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -16,12 +17,23 @@ export default new Vuex.Store({
     setTransactions (state, payload) {
       state.transactions = payload
     },
-    changeFilter (state, payload) {
-      state.filter = payload
+    changeFilterTitle (state, payload) {
+      state.filter.title = payload.toLowerCase()
+    },
+    changeFilterStatus (state, payload) {
+      state.filter.status = payload
     }
   },
   actions: {
   },
   modules: {
+  },
+  getters: {
+    currentTransactions: state => {
+      return state.transactions.filter((transaction: Transaction) => {
+        return transaction.title.toLowerCase().includes(state.filter.title) &&
+               (state.filter.status === '' || transaction.status === state.filter.status)
+      })
+    }
   }
 })
