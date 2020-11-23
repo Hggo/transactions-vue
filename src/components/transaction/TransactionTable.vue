@@ -17,9 +17,9 @@
     <Modal :show="showDetail" @close="close">
       <template v-slot:header></template>
       <template v-slot:body>
-        <ProgressBar status="processing" />
-        <DetailTransaction title="Transferido de" :source="'Banco 1'" :ammout="1000"/>
-        <DetailTransaction title="Para" :source="'Banco 1'" :ammout="1000" />
+        <ProgressBar :status="transaction.status" />
+        <DetailTransaction title="Transferido de" :source="transaction.from" :ammout="transaction.amount"/>
+        <DetailTransaction title="Para" :source="transaction.to" :ammout="transaction.amount" />
       </template>
     </Modal>
   </div>
@@ -42,6 +42,7 @@ export default vue.extend({
   methods: {
     openDetail (transaction: Transaction) {
       this.showDetail = true
+      this.$store.commit('detailTransaction', transaction)
     },
     close () {
       this.showDetail = false
@@ -50,6 +51,9 @@ export default vue.extend({
   computed: {
     transactions (): Transaction[] {
       return this.$store.getters.currentTransactions
+    },
+    transaction (): Transaction {
+      return this.$store.state.transactionBeingDetailed
     }
   }
 })

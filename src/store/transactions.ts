@@ -17,6 +17,9 @@ export default new Vuex.Store({
     setTransactions (state, payload) {
       state.transactions = payload
     },
+    detailTransaction (state, payload) {
+      state.transactionBeingDetailed = payload
+    },
     changeFilterTitle (state, payload) {
       state.filter.title = payload.toLowerCase()
     },
