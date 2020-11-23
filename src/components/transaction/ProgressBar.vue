@@ -2,7 +2,7 @@
   <div>
     <div class="bar">
       <div class="bar-progress" :style="{ width: width + '%' }">
-        <div class="circle" :style="{ 'margin-left': width * 2 + '%' }"></div>
+        <div class="circle"></div>
       </div>
     </div>
     <div class="bar-label">
@@ -44,7 +44,7 @@ export default vue.extend({
       height: 15px;
       width: 15px;
       background-color: black;
-      transform: translate(-50%);
+      margin-left: auto;
     }
   }
 }
