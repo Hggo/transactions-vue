@@ -8,9 +8,9 @@
     </label>
     <select v-model="statusFilter">
       <option value="">Status</option>
-      <option value="created">Criado</option>
-      <option value="processing">Processando</option>
-      <option value="processed">Processado</option>
+      <option value="created">Solicitada</option>
+      <option value="processing">Processada</option>
+      <option value="processed">Concluída</option>
     </select>
   </div>
 </template>

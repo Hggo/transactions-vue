@@ -23,10 +23,15 @@ body {
 <script lang="ts">
 import vue from 'vue'
 import Nav from '@/components/Nav.vue'
+import money from '@/components/shared/filter/money.filter'
+import status from '@/components/shared/filter/status.filter'
 
 export default vue.extend({
   components: {
     Nav
+  },
+  filters: {
+    money, status
   }
 })
 </script>

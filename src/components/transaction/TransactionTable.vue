@@ -10,8 +10,8 @@
       <tr v-for="transaction in transactions" v-bind:key="transaction.id" @click="openDetail(transaction)">
         <td>{{ transaction.title }}</td>
         <td>{{ transaction.description }}</td>
-        <td>{{ transaction.status }}</td>
-        <td>R$ {{ transaction.amount }}</td>
+        <td>{{ transaction.status | status}}</td>
+        <td>{{ transaction.amount | money }}</td>
       </tr>
     </table>
     <Modal :show="showDetail" @close="close">

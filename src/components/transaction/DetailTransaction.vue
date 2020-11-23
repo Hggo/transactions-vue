@@ -4,7 +4,7 @@
     <hr class="divider" />
     <div class="detail-data">
       <span>{{ source }}</span>
-      <span>R$ {{ ammout }}</span>
+      <span>{{ ammout | money }}</span>
     </div>
   </div>
 </template>
