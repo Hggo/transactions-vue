@@ -22,6 +22,7 @@ export default vue.extend({
   data () {
     return {
       timeout: 0,
+      defaultTimeout: 300,
       debouncedTitleFilter: '',
       statusFilter: ''
     }
@@ -36,7 +37,7 @@ export default vue.extend({
         this.timeout = setTimeout(() => {
           this.debouncedTitleFilter = value
           this.$store.commit('changeFilterTitle', value)
-        }, 300)
+        }, this.defaultTimeout)
       }
     }
   },

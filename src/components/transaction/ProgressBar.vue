@@ -13,17 +13,13 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import vue from 'vue'
 
 export default vue.extend({
-  components: {},
   props: ['status'],
-  data () {
-    return {}
-  },
   computed: {
-    width () {
+    width (): number {
       return this.status === 'created' ? 0 : this.status === 'processing' ? 50 : 100
     }
   }

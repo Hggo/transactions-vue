@@ -8,7 +8,7 @@
               <slot name="header"></slot>
             </span>
 
-            <span class="close-button" @click="hide">
+            <span id="close-button" class="close-button" @click="hide">
               <img src="@/assets/x-mark.svg" alt="Fechar" height="20px" />
             </span>
           </div>
