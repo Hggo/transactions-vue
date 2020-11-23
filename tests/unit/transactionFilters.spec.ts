@@ -5,24 +5,24 @@ import store from '@/store/transactions'
 
 // Needed because jest is not recognizing this computed property
 interface ITransactionFilters extends vue {
-    titleFilter: string
-    statusFilter: string
+    titleFilter: string;
+    statusFilter: string;
 }
 
 describe('Trannsaction filters tests', () => {
   it('Should render the component and trigger the right commits in the store', async (done) => {
-    const wrapper = mount<ITransactionFilters>(TransactionFilters, {store})
-    await wrapper.setData({defaultTimeout: 0});
+    const wrapper = mount<ITransactionFilters>(TransactionFilters, { store })
+    await wrapper.setData({ defaultTimeout: 0 })
 
     wrapper.vm.statusFilter = 'created'
     await wrapper.vm.$nextTick()
-    expect(wrapper.vm.$store.state.filter.status).toBe('created');
+    expect(wrapper.vm.$store.state.filter.status).toBe('created')
 
     wrapper.vm.titleFilter = 'test'
 
     setTimeout(() => {
-        expect(wrapper.vm.$store.state.filter.title).toBe('test');
-        done();
+      expect(wrapper.vm.$store.state.filter.title).toBe('test')
+      done()
     }, 1)
   })
 })

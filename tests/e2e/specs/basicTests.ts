@@ -24,7 +24,7 @@ describe('Basic tests', () => {
     cy.get('.transaction-row').eq(0).click()
     cy.get('.modal-backdrop-container').should('be.visible')
     cy.get('.header').should('have.text', 'Depósito')
-  });
+  })
 
   it('Should be able to close the modal', () => {
     cy.get('#close-button').click()
