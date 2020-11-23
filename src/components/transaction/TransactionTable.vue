@@ -15,7 +15,7 @@
       </tr>
     </table>
     <Modal :show="showDetail" @close="close">
-      <template v-slot:header></template>
+      <template v-slot:header>{{transaction.title}}</template>
       <template v-slot:body>
         <ProgressBar :status="transaction.status" />
         <DetailTransaction title="Transferido de" :source="transaction.from" :ammout="transaction.amount"/>
